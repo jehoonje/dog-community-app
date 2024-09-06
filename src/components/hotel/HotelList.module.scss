@@ -1,0 +1,189 @@
+.hotelList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1300px;
+  background: #F4E8D3;
+  border-radius: 32px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  justify-content: center;
+  padding: 40px;
+  margin-bottom: 100px;
+}
+
+.hotel {
+  color: #5C4033;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #F4E8D3;
+  flex: 1 1 calc(50% - 40px);
+  max-width: calc(50% - 100px);
+  box-sizing: border-box;
+
+  h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: #333333;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  .imageBox {
+    position: relative;
+
+    .slick-prev, .slick-next {
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      width: 150px; 
+      height: 150px;
+      font-size: 30px;
+      color: #343333;
+
+      &:before {
+        font-size: 50px;
+      }
+    }
+
+    .slick-prev {
+      left: 10px;
+    }
+
+    .slick-next {
+      right: 10px;
+    }
+
+    &:hover .slick-prev,
+    &:hover .slick-next {
+      display: block;
+    }
+  }
+
+  .imageGallery {
+    width: 100%;
+
+    .slick-slide {
+      height: auto;
+    }
+
+    .slick-list {
+      height: 400px;
+    }
+
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .deleteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 2rem;
+    position: relative;
+    right: 8%;
+    color: #868686;
+  }
+
+  .favoriteButton {
+    position: relative;
+    left: 94%;
+    margin-bottom: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #868686;
+  }
+
+  .ListButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-right: 10px;
+    color: #fff;
+    background-color: #B37A7A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #9A5A5A;
+    }
+  }
+}
+
+
+@media screen and (max-width: 400px)  and (min-width: 380px){
+  .hotelList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 90% !important;
+    background: #F4E8D3;
+    border-radius: 32px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    justify-content: center;
+    padding: 20px;
+  
+    .hotel {
+      color: #5C4033;
+      padding: 0px;
+      margin: 10px;
+      border-radius: 8px;
+      background-color: #F4E8D3;
+      flex: 1 1 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+
+      .favoriteButton {
+        position: relative;
+        left: 91%;
+        margin-bottom: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #868686;
+      }
+      .deleteButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: normal;
+        font-size: 2rem;
+        position: relative;
+        right: 12%;
+        color: #868686;
+      }
+
+     
+        .imageGallery {
+          width: 100%;
+      
+        .image {
+          width: 100%;
+          height: 250px !important;
+          object-fit: fill;
+        }
+      }
+    }
+      
+  }
+}

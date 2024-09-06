@@ -1,0 +1,97 @@
+.reviewList {
+  width: 100%;
+  max-width: 1300px;
+  margin: 50px auto;
+
+  .swiper {
+      width: 100%;
+      height: 100%;
+  }
+
+  .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      width: calc(50% - 10px); // 원래 설정 유지
+      padding: 10px;
+  }
+
+  .review {
+      background: #F4E8D3;
+      border-radius: 8px;
+      padding: 20px;
+      padding-left: 60px;
+      padding-right:60px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: #5C4033;
+      width: 521px !important; 
+      max-width: 600px;
+      min-width: 120px;
+  }
+
+  .reviewContent {
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+
+  .reviewDetails {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .reviewRate {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+  }
+
+  .reviewDate,
+  .reviewUser {
+      font-size: 14px;
+      color: #5C4033;
+      margin-bottom: 3px;
+  }
+
+  .starIcon {
+      color: #ffc107;
+      margin-right: 5px;
+  }
+
+  .swiperButtonPrev,
+  .swiperButtonNext {
+      color: #860e0e !important;
+  }
+
+}
+
+@media screen and (max-width: 400px) and (min-width: 380px){
+  .swiper-slide {
+      width: 90%; // 400px 이하에서 슬라이드가 화면 전체 너비를 차지하도록 설정
+      padding: 0; // 슬라이드 간 여백 제거
+  }
+
+  .review {
+      width: 66% !important;
+      padding: 15px; // 작은 화면에서의 패딩 조정
+      margin-left: 30px;
+      max-width: 55% !important;// 최대 너비 제한 해제
+      min-height: 140px !important;
+  }
+  .swiperButtonNext {
+    display: none; // 400px 이하에서 오른쪽 버튼 숨기기
+  }
+}
+
+.reviewLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  height: 100px; /* 높이 설정 */
+  font-size: 18px; /* 글자 크기 설정 */
+  color: #5C4033; /* 글자 색상 설정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  width: 100%; /* 메시지를 화면 중앙으로 배치 */
+}

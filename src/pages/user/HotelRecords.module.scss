@@ -1,0 +1,187 @@
+.wrap {
+  width: 50%;
+  margin: 50px auto;
+  border-radius: 32px;
+  background: #F4E8D3;
+  padding-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .subWrap {
+    width: 78%;
+    margin: 50px auto 50px;
+    background: #F0E1C4;
+    padding-bottom: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  .noReservation {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .reservationList {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+
+    .reservationItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #F4E9D3;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+
+      .imageContainer {
+        flex-shrink: 0;
+        margin-right: 40px;
+
+        .reservationImage {
+          width: 100px;
+          height: 100px;
+          border-radius: 12px;
+          object-fit: cover;
+        }
+      }
+
+      .reservationDetails {
+        flex-grow: 1;
+
+        div {
+          margin-bottom: 10px;
+          font-size: 1rem;
+          color: #555;
+
+          strong {
+            color: #333;
+          }
+        }
+      }
+
+      .reservationActions {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+
+        .link {
+          margin-bottom: 10px;
+          padding: 8px 12px;
+          //background-color: #ff6b6b;
+          color: black;
+          text-decoration: none;
+          border-radius: 8px;
+          text-align: center;
+          font-size: 0.9rem;
+          transition: background-color 0.3s;
+          background-color: transparent; /* 배경색 변경 없음 */
+          border: 1px solid transparent; /* 테두리 없애기 */
+
+          &:hover {
+            background-color: #B3797A;
+            color: white;
+          }
+
+          &:last-child {
+            margin-bottom: 10px;
+            //background-color: #4caf50;
+
+            &:hover {
+              background-color: #B3797A;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) and (min-width: 380px) {
+  .wrap {
+    width: 87%; /* Adjusted to better fit the screen */
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: none; /* Remove box-shadow to reduce visual clutter */
+  }
+
+  .subWrap {
+    width: 100%;
+    margin: 0;
+    padding: 15px; /* Slightly more padding for better spacing */
+    border-radius: 8px;
+    box-shadow: none; /* Remove box-shadow for simplicity */
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .reservationList {
+    width: 100%;
+  }
+
+  .reservationItem {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .imageContainer {
+    margin-bottom: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-right: 0px !important;
+  }
+
+  .reservationImage {
+    width: 180px !important;
+    height: 130px !important;
+  }
+
+  .reservationDetails {
+    width: 100%;
+
+    div {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+  }
+
+  div.reservationActions {
+    position: relative !important;
+    width: 100%;
+    flex-direction: row !important; /* Arrange buttons horizontally */
+    margin-left: 25px;
+  }
+
+  .link {
+    width: 48%; /* Ensure buttons fit nicely on one line */
+    padding: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: black;
+    background-color: transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+}

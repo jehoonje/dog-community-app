@@ -1,0 +1,252 @@
+.editPostPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #F1E1C8;
+    padding: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+
+        border: 3px solid #cfbbbb;
+            background: none;
+            padding: 1rem;
+            font-size: 1rem;
+    
+}
+
+.textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.currentImages {
+    margin-bottom: 15px;
+
+    p {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+}
+
+.thumbnails {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.imageUpload {
+    margin-bottom: 15px;
+}
+
+.imageLabel {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.imageLabel:hover {
+    background-color: #e0e0e0;
+}
+
+.imageInput {
+    display: none;
+}
+
+.fileName {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #B3797A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+    background-color: #9F5A5B;
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .input,
+    .textarea,
+    .submitButton {
+        font-size: 14px;
+
+            border: 3px solid #cfbbbb;
+                background: none;
+                padding: 1rem;
+                font-size: 1rem;
+        
+    }
+}
+
+.headerNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.backButton,
+.homeButton {
+    font-size: 24px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.postTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+
+.imagePreview {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.imageItem {
+    margin-right: 10px;
+}
+
+.currentImages {
+    display: flex;
+    flex-wrap: wrap;
+    /* 줄바꿈을 허용합니다 */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.imageWrapper {
+    margin-right: 10px;
+    /* 이미지 간격 조정 */
+    margin-bottom: 10px;
+    /* 줄바꿈 시 아래 여백 추가 */
+}
+
+.thumbnails {
+    max-width: 100px;
+    /* 이미지 최대 너비 설정 */
+    max-height: 100px;
+    /* 이미지 최대 높이 설정 */
+}
+
+.keywordsContainer{
+    padding: 10px;
+}
+
+///
+/// 
+.keywordSection {
+    margin-bottom: 20px;
+}
+
+.keywordLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.keywordSelectWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.keywordSelect {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #B3797A;
+    border-radius: 8px;
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    &:focus {
+        outline: none;
+        border-color: #9F5A5B;
+        box-shadow: 0 0 0 2px rgba(179, 121, 122, 0.2);
+    }
+
+    &:hover {
+        border-color: #9F5A5B;
+    }
+}
+
+.keywordSelectWrapper::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #B3797A;
+}
+

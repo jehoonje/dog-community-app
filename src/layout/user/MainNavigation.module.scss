@@ -1,0 +1,250 @@
+.header {
+  background-color: #f0e2c8;
+  border-bottom: 1px solid #e7e7e7;
+  display: flex;
+  justify-content: center;
+  color: #a69991;
+  width: 100%;
+  height: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //margin-top: 30px;
+  }
+
+  .left,
+  .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    .count {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #b3797a;
+      position: absolute;
+      right: 131px;
+      top: 29px;
+      color: white;
+      font-size: 0.8rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right > * {
+    margin-right: 40px;
+  }
+
+  .login {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+  }
+
+  .icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    color: #a69a91;
+  }
+
+  .bell {
+    width: 34px;
+    height: 34px;
+  }
+
+  .basket {
+    width: 33px;
+    height: 33px;
+    padding-top: 5px;
+  }
+
+  .profile {
+    width: 33px;
+    height: 33px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .logout {
+    background: none;
+    border: none;
+    color: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.noticeWrap {
+  position: absolute;
+  right: 30px;
+  top: 53px;
+  width: 340px;
+  height: 375px;
+  background: #ffffff;
+  border: 1px solid black;
+  border-radius: 32px;
+  overflow-y: auto;
+  z-index: 9999;
+  padding: 6px;
+
+  .message {
+    width: 93%;
+    padding-top: 14px;
+    margin: 0 auto;
+    color: black;
+    cursor: pointer;
+    padding-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .message:hover {
+    text-decoration: underline;
+  }
+
+  .time {
+    border-bottom: 1px solid black;
+    text-indent: 14px;
+    padding-bottom: 14px;
+    padding-top: 3px;
+    font-size: 0.8rem;
+  }
+
+  .clickedMessage {
+    color: #989898;
+    cursor: default;
+  }
+}
+.noticeWrap::-webkit-scrollbar {
+  display: none;
+}
+
+.nothingNotice {
+  text-align: center;
+  padding-top: 50px;
+  color: black;
+}
+
+@media screen and (max-width: 400px) {
+  .nav {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+  }
+
+  .img {
+    padding-left: 10px;
+    order: -1; /* 이미지를 왼쪽 끝으로 이동 */
+  }
+
+  .left,
+  .center,
+  .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .center {
+    justify-content: flex-start !important;
+    margin-right: 120px;
+  }
+
+  .left {
+    justify-content: flex-start;
+    order: 1; /* 왼쪽 섹션을 첫 번째로 설정 */
+  }
+
+  .right {
+    justify-content: flex-end;
+    order: 2; /* 오른쪽 섹션을 두 번째로 설정 */
+  }
+
+  .right > * {
+    margin-right: 0px !important;
+  }
+
+  .login {
+    /* margin-right: 20px !important; */
+  }
+
+  .logout {
+    margin-right: 10px !important;
+  }
+
+  .count {
+    right: 60px !important;
+  }
+
+  .bell {
+    width: 27px !important;
+    height: 27px !important;
+    margin-right: 10px !important;
+  }
+
+  .basket {
+    width: 27px !important;
+    height: 27px !important;
+    margin-right: 10px !important;
+    padding-top: 7px;
+  }
+
+  .welcome {
+    display: none;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .user {
+    padding-left: 14px;
+  }
+
+  .hamburger {
+    margin-left: 10px;
+    order: 1; /* 로그아웃 버튼을 오른쪽 섹션의 첫 번째로 설정 */
+  }
+
+  .noticeWrap {
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    width: 95%;
+    max-width: 340px;
+    height: 375px;
+    background: #ffffff;
+    border: 1px solid black;
+    border-radius: 32px;
+    overflow-y: auto;
+    z-index: 9999;
+    padding: 6px;
+  }
+}

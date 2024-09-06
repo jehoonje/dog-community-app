@@ -1,0 +1,45 @@
+.wrap {
+  width: 50%;
+  margin: 50px auto;
+  border-radius: 32px;
+  background: #F4E9D3;
+  padding-bottom: 30px;
+
+  .subWrap {
+    width: 90%;
+    margin: 50px auto 0;
+    background: #F0E1C4;
+
+    .header {
+      display: flex;
+      .menu {
+        width: 50%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-size: 1.3rem;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+          font-weight: bold;
+        }
+      }
+    }
+      .hr {
+        width: 90%;
+        margin: 0 auto;
+        color: black;
+        height: 0.5px;
+        background: lightgray;
+        margin-bottom: 30px;
+      }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrap {
+    width: 90%;
+  }
+}

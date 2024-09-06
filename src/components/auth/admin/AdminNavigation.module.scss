@@ -1,0 +1,17 @@
+.navigation {
+  width: 20%;
+  height: 90vh;
+  background: white;
+
+  .menu {
+    text-align: center;
+    margin-top: 43px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .menu:hover {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}

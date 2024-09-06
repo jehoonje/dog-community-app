@@ -1,0 +1,65 @@
+.wrap {
+
+  .add {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .subWrap {
+    width: 90%;
+    margin: 0 auto;
+
+    .me {
+      width: 100%;
+      margin: 5% auto;
+      padding-top: 30px;
+      font-size: 23px;
+      font-weight: 600;
+      background: #F1E1C4;
+    }
+
+    .span {
+      display: block;
+      padding-left: 5%;
+      margin-bottom: 20px;
+    }
+
+    .addDog {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: black;
+      background-color: #F4E9D3;
+      border: none;
+      text-indent: 0;
+      border-radius: 25px;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.7s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: #B4787A;
+        transform: translateY(-2px);
+        color: white;
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .subWrap {
+      width: 100%;
+      .me {
+        width: 90%;
+        margin: 30px auto;
+        padding-top: 30px;
+        font-size: 23px;
+        font-weight: 600;
+      }
+      .addDog {
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+    }
+  }
+}

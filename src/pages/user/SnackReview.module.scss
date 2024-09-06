@@ -1,0 +1,303 @@
+
+
+.wrap {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 32px;
+
+  .h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+  }
+}
+
+.subWrap {
+  width: 100%;
+  margin: 50px auto 0;
+  background: #F0E1C4;
+  padding-bottom: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+
+.card {
+  background: #F4E9D3;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 45px;
+  width: 74%;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.imageContainer {
+  flex: 0 0 100px;
+  margin-right: 20px;
+}
+
+.dogImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.details {
+  flex: 1;
+  font-size: 14px;
+  color: #555;
+}
+
+.details p {
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.actions {
+  flex: 0 0 100px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cancelButton {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: black;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.cancelButton:hover {
+  background-color: #B3797A;
+  color: white;
+}
+
+
+
+.cancelledText {
+  color: red;
+}
+
+.snack_review_ul {
+  margin: 0;
+  padding: 0;
+}
+
+.snack_review_li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.snack_review_box {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.snack_review_img_sm {
+  max-width: 100%;
+  height: 100%;
+}
+
+.review_button {
+  background-color: #B3797A;
+  color: #ffffff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+.review_button:hover {
+  background-color: #9F5A5B;
+  color: white;
+}
+
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #F1E1C8;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+.more_button{
+  background-color: #B3797A;
+  color: #ffffff;
+  border: none;
+  padding: 20px 50px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  /* margin-bottom: 0; */
+  margin: 10px auto 10px;
+  display: block;
+}
+
+.noReview {
+  padding: 40px;
+  text-align: center;
+
+}
+
+//20240820
+.review_button_red{
+  background-color: #1a463c;
+  // #8ecae6
+}
+
+.review_dog_name{
+  font-size: 19px;
+}
+
+@media (max-width: 400px) {
+  .wrap {
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 16px;
+    padding-bottom: 20px;
+  }
+
+  .h3 {
+    text-align: center;
+  }
+
+
+  .subWrap {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .cardContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imageContainer {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dogImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .details {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .cancelButton {
+    width: 48%;
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+  .card{
+    width: 88%;
+    margin: 40px auto 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .snack_review_box {
+    display: none;
+  }
+  .details a{
+    width: 65%;
+  }
+  .details a p{
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+  }
+  .review_dog_name{
+    font-size: 16px;
+    text-align: center;
+  }
+  .review_button{
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+  .more_button{
+    padding: 10px 20px;
+  }
+  .review_dog_name span{
+    display: block;
+    font-size: 18px;
+    color: #1a463c;
+    font-weight: bold;
+  }
+  .snack_review_ul{
+    margin: 35px 0 0 0;
+  }
+
+}

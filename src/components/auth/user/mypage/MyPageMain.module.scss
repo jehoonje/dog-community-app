@@ -1,0 +1,35 @@
+.wrap {
+  width: 51%;
+  margin: 50px auto;
+  border-radius: 32px;
+  background: #F4E8D3;
+  padding-bottom: 30px;
+  //font-family: " Noto Sans KR", sans-serif;
+}
+
+.loadingOverlay {
+  height: 100vh;
+}
+
+.admin {
+  width: 20%;
+  margin: 0 auto;
+  padding-top: 30px;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+}
+.admin:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 400px) {
+  .wrap {
+    width: 95% !important; /* 모바일에서 완전한 폭 사용 */
+    margin-bottom: 80px;
+    padding: 10px; /* 모바일에서 패딩 추가 */
+    border-radius: 0;
+  }
+}

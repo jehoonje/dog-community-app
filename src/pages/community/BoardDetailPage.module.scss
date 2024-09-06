@@ -1,0 +1,802 @@
+.postDetailPage {
+    background-color: #F1E1C8;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.postTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.postMeta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}
+
+.author,
+.date,
+.viewCount {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profileImage {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.optionsContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // padding: 10px;
+}
+
+.optionsButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    padding: 5px;
+}
+
+.optionsMenu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 1000;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 150px;
+}
+
+.optionsMenu.active {
+    position: fixed;
+        /* 모달을 화면에 고정 */
+        top: 25%;
+        /* 세로 중앙에 위치 */
+        left: 50%;
+        /* 가로 중앙에 위치 */
+        transform: translate(-50%, -50%);
+        /* 정확한 중앙으로 이동 */
+        z-index: 1000;
+        /* 다른 요소들 위에 표시되도록 */
+        /* 모달 창의 배경이나 크기 설정 등 다른 스타일들 */
+}
+
+.optionsMenu button {
+    width: 100%;
+    max-width: 760px;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    background-color: #F1E1C8;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 15px;
+}
+
+.optionsMenu button:hover {
+    background-color: #D3C0A9;
+    color: #333;
+}
+
+.optionsOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.optionsOverlay.active {
+    display: block;
+}
+
+.postImages {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainImage {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.imageNavButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+}
+
+.imageNavButton:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.imageNavButton.prev {
+    left: 10px;
+}
+
+.imageNavButton.next {
+    right: 10px;
+}
+
+.imageCount {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.postContent {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+        
+    line-height: 1.5;
+}
+
+.shareButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.shareButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #B3797A;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shareButton:hover {
+    background-color: #9F5A5B;
+}
+
+.shareButton svg {
+    margin-right: 8px;
+}
+
+.commentsSection {
+    margin-top: 40px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.commentsSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.commentsSection h2 svg {
+    margin-right: 8px;
+}
+
+.commentForm {
+    margin-bottom: 20px;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.commentInput,
+.subReplyInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    font-size: 1rem;
+}
+
+.commentInput:focus,
+.subReplyInput:focus {
+    outline: none;
+}
+
+.iconButton,
+.subReplyIconButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 0 10px;
+}
+
+.iconButton:hover,
+.subReplyIconButton:hover {
+    color: #333;
+}
+
+.submitButton,
+.cancelButton
+ {
+    padding: 8px 15px;
+    background-color: #B3797A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 15px;
+    margin-left: 5px;
+    font-size: 0.9rem;
+}
+
+.subReplySubmitButton,
+.subReplyCancelButton{
+        // padding: 8px 15px;
+            background-color: #B3797A;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 15px;
+            margin-left: 5px;
+            font-size: 0.9rem;
+}
+
+.submitButton:hover,
+.cancelButton:hover,
+.subReplySubmitButton:hover,
+.subReplyCancelButton:hover {
+    background-color: #9F5A5B;
+}
+
+.cancelButton,
+.subReplyCancelButton {
+    background-color: #999;
+}
+
+.cancelButton:hover,
+.subReplyCancelButton:hover {
+    background-color: #777;
+}
+
+.imageSelected {
+    font-size: 0.8rem;
+    color: #666;
+    margin-left: 10px;
+}
+
+.commentList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.commentItem {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.commentContent {
+    margin-bottom: 10px;
+}
+
+.commentAuthor,
+.replyAuthor,
+.subReplyAuthor {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-right: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.commentDate,
+.replyDate,
+.subReplyDate {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.replyList {
+    list-style-type: none;
+    padding: 0 0 0 20px;
+    margin-top: 10px;
+}
+
+.replyItem,
+.subReplyItem {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.subReplyItem {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid #e0e0e0;
+    margin-left: 10px;
+}
+
+.commentActions,
+.subReplyActions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.loginPrompt {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.iconWithSpacing {
+    margin-right: 8px;
+}
+
+.commentImage,
+.subReplyImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    object-fit: contain;
+    max-height: 300px;
+}
+
+.commentActions,
+.subReplyActions {
+    display: flex;
+    justify-content: flex-end;
+    // margin-top: 10px;
+}
+
+.editCommentButton,
+.deleteCommentButton,
+.replyButton,
+.editSubReplyButton,
+.deleteSubReplyButton,
+.updateSubReplyButton,
+.cancelEditButton,
+.updateCommentButton
+ {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 0.8rem;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.editCommentButton:hover,
+.deleteCommentButton:hover,
+.replyButton:hover,
+.editSubReplyButton:hover,
+.deleteSubReplyButton:hover,
+.updateSubReplyButton:hover,
+.cancelEditButton:hover,
+.updateCommentButton:hover
+{
+    background-color: #e0e0e0;
+}
+
+.imageContainer {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.subReplyForm {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.subReplyInputWrapper {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.subReplyInput {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: none;
+    background-color: transparent;
+    font-size: 0.9rem;
+}
+
+.subReplyInput:focus {
+    outline: none;
+}
+
+.subReplyIconButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #666;
+    padding: 0 8px;
+}
+
+.subReplyIconButton:hover {
+    color: #333;
+}
+
+.replyButton{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.subReplyItem::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    color: #999;
+}
+
+.subReplyItem {
+    position: relative;
+    padding-left: 20px;
+}
+
+.commentAuthor,
+.subReplyAuthor {
+    margin-right: 15px;
+    /* 아이디와 날짜 사이 간격 조정 */
+}
+
+.toggleSubRepliesButton {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #f0f0f0;
+    }
+
+    svg {
+        margin-right: 5px;
+    }
+}
+
+.subReplyList {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #e0e0e0;
+}
+
+.likeShareContainer {
+display: flex;
+    justify-content: center; // 중앙 정렬
+    align-items: center; // 세로 방향으로도 중앙 정렬
+    margin: 20px 0;
+    gap: 20px; // 버튼 사이의 간격
+}
+
+.likeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #999; // 기본 색상을 회색으로 변경
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    // margin-top: 10px;
+
+    &:hover {
+        background-color: #777; // 호버 시 약간 어두운 회색
+    }
+
+    &.active {
+        background-color: #B3797A; // 눌렸을 때 공유하기 버튼과 같은 색상
+
+        &:hover {
+            background-color: #9F5A5B; // 눌린 상태에서 호버 시
+        }
+    }
+
+    svg {
+        margin-right: 8px;
+    }
+}
+
+
+.commentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    h2 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+.sortContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.sortButton {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sortOptions {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 5px 10px;
+        text-align: left;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+}
+
+//
+.headerNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.backButton,
+.homeButton {
+    font-size: 24px;
+    color: #333;
+    /* 텍스트 색상 유지 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    /* 너비 자동 조정 */
+    height: auto;
+    /* 높이 자동 조정 */
+    border: none;
+    /* 테두리 제거 */
+    background: none;
+    /* 배경 제거 */
+    transition: color 0.3s ease;
+    /* 색상 변화의 부드러움 추가 */
+}
+
+.backButton:hover,
+.homeButton:hover {
+    cursor: pointer;
+        /* 호버 시 포인터로 변경 */
+        transform: scale(1.1);
+            /* 호버 시 약간 확대 */
+}
+
+.postTitle{
+    cursor: pointer;
+}
+
+
+
+
+
+
+.editCommentTextarea,
+.editSubReplyTextarea{
+    border: 3px solid #cfbbbb;
+        background: none;
+        padding: 1rem;
+        font-size: 1rem;
+        
+}
+
+// 400px 이하 반응형 스타일
+@media (max-width: 400px) {
+
+    .editCommentTextarea{
+width: 250px;
+    }
+    .editSubReplyTextarea {
+            width: 239px;
+    }
+}
+
+
+// 모달 스타일 통합
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h3 {
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #B3797A;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 0 5px;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #9F5A5B;
+        }
+
+        &:last-child {
+            background-color: #666;
+
+            &:hover {
+                background-color: #444;
+            }
+        }
+    }
+}
